@@ -21,3 +21,10 @@ function functionalUrls(elements) {
   return elements.map(element => urlify(element));
 }
 console.log(functionalUrls(states));
+
+// Returns URLs
+function urlComposer(elements) {
+  let url = "https://example.com/"
+  return elements.map(element => url + urlify(element));
+}
+console.log(urlComposer(states));
