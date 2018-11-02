@@ -28,3 +28,34 @@ function urlComposer(elements) {
   return elements.map(element => url + urlify(element));
 }
 console.log(urlComposer(states));
+
+
+// singles: Imperative version
+function imperativeSingles(elements) {
+  let singles = [];
+  elements.forEach(function(element) {
+    if (element.split(/\s+/).length === 1) {
+      singles.push(element);
+    }
+  });
+  return singles;
+}
+console.log(imperativeSingles(states));
+
+// singles: Functional version
+function functionalSingles(elements) {
+  return elements.filter(element => element.split(/\s+/).length === 1);
+}
+console.log(functionalSingles(states));
+
+
+// Exercise filter
+function getDakota(elements) {
+  return elements.filter(element => element.includes("Dakota"));
+}
+console.log(getDakota(states));
+
+function twoWords(elements) {
+  return elements.filter(element => element.split(/\s+/).length === 2);
+}
+console.log(twoWords(states));
